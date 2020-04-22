@@ -36,26 +36,18 @@ public partial class _Default : Page
         { 
             Response.Redirect("~/RecordAudio.aspx?page=" + cipher);
         }
-          
-
-
     }
-
     protected void submit_Click(object sender, EventArgs e)
     {
         if (accept.Checked == true)
         {
-
             Response.Redirect("~/PersonalInfo.aspx?page=" + cipher);
         }
         else
         {
             ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "ClientScript", "alert('Please accept terms & conditions.')", true);
-
         }
-
     }
-
     public static string Encrypt(string input, string key)
     {
         byte[] inputArray = UTF8Encoding.UTF8.GetBytes(input);
@@ -68,8 +60,6 @@ public partial class _Default : Page
         tripleDES.Clear();
         return Convert.ToBase64String(resultArray, 0, resultArray.Length);
     }
-
-
     public static string Decrypt(string input, string key)
     {
         byte[] inputArray = Convert.FromBase64String(input);
